@@ -1,0 +1,13 @@
+<!--pages/nextCon//pages/notice/notice.wxml-->
+<scroll-view style='height:{{pageHeight}}px;' scroll-y="true">
+  <view class="notice-center">
+    <block wx:for="{{articleCenter}}" wx:key="">
+      <view class="notice-center-con" bindtap="noticeNext" data-content="{{item.noticeIndex}}">
+        <view class="notice-center-txt">
+          <text class="notice-center-txt-title">{{item.title}}</text>
+          <text class="notice-center-txt-time">{{item.time}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>

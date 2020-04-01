@@ -1,0 +1,36 @@
+<!--pages/me/me.wxml-->
+<scroll-view>
+  <view class="me-img">
+    <image src="{{bjImg}}" />
+  </view>
+  <view class="container">
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 请授权 </button>
+      <block wx:else>
+        <view wx:if="{{userInfoSet}}" class="userinfo-view">
+          <view class="userinfo-img">
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+          </view>
+          <view class="userinfo-nickname"><text>昵称：{{userInfo.nickName}}</text></view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  
+</scroll-view>
+
+<!-- 个人中心 -->
+  <view class="me-center">
+    <view class="me-center-con">
+      <block wx:for="{{meCenter}}" wx:key="">
+        <view bindtap="nextInfo" data-index="{{index}}" data-nextpage="{{item.nextPage}}" class="me-center-con-data">
+          <view class="me-center-con-data-view">
+            <image src="../../image/{{item.icon}}" />
+            <text>{{item.title}}</text>
+          </view>
+          <view class="me-center-con-next"><image src="../../image/{{item.point}}" /></view>
+        </view>        
+      </block>
+    </view>
+  </view>

@@ -1,0 +1,220 @@
+page{
+  font-size: 30rpx;
+}
+.user-status{
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  margin-top: 400rpx;
+}
+.user-status image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+.user-status text{
+  color: #858585;
+}
+.change-user-status{
+  margin-top: 400rpx;
+  color: #858585;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.change-user-status image{
+  width:100rpx;
+  height: 100rpx;
+  margin: 0 auto 20rpx auto;
+}
+.change-user-status text,.change-user-status image{
+  display: block;
+}
+.car-shang-top{
+  width: 100%;
+  position: relative;
+  height: 400rpx;
+}
+.car-shang-top-img{
+  display: block;
+  width: 100%;
+  height: 400rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* 搜索样式 */
+.search-set{
+  width: 90%;
+  margin: auto;
+}
+.search{
+  display:flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 38rpx;
+  z-index: 1;
+  width: 90%;
+  /* border: 1px solid red; */
+}
+.set{
+  display:flex;
+  justify-content: flex-start;
+  background: #fff;
+  height: 80rpx;
+  width: 500rpx;
+  border-radius: 10rpx;
+}
+.search-icon{
+  display: inline-block;
+  vertical-align: middle;
+}
+.search-icon-inp{
+  width: 130rpx;
+  height: 80rpx;
+  background: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  margin-right: 0;
+  color: #1f9bde;
+  font-size: 30rpx;
+  right: 0;
+  display: block;
+}
+.change-icon{
+  margin-left:40rpx;
+  margin-right: 20rpx;
+  margin-top: 22rpx;
+  width: 1rem;
+  height: 1rem;
+}
+.search-inp{
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #fff;
+}
+/* 顶部数据样式 */
+.car-shang-data{
+  position: absolute;
+  width: 100%;
+  top:50%;
+  margin-top: -6%;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+.car-shang-data-num{
+  width: 160rpx;
+  height: 160rpx;
+  line-height: 160rpx;
+  border-radius: 100%;
+  text-align: center;
+  border: 2px solid #fff;
+  font-weight: 600;
+  font-size: 50rpx;
+}
+.car-shang-data-num,.car-shang-data-title{
+  color: #fff;
+}
+.car-shang-data-title{
+  width: 160rpx;
+  text-align: center;
+  margin-top: 10rpx;
+}
+.car-shang-data-out{
+  /* width: 90%; */
+  margin: auto;
+}
+
+/* 数据筛选 */
+.filtrate-car{
+  border-bottom: 4px solid #e2e2e2;
+}
+.tab-control{
+  display: flex;
+  flex-wrap:nowrap;
+  width: auto;
+}
+.filtrate-car-data-view-con{
+  padding:30rpx;
+}
+.filtrate-car-data-view-con-title{
+  font-size: 35rpx;
+}
+.filtrate-car-data-view-con-title,.filtrate-car-data-view-con-num{
+  min-width:180rpx;
+  display: block;
+  text-align: center;
+}
+
+.active{
+  color: #ffa028;
+}
+
+/* 车辆情况筛选内容样式 */
+.filtrate-car-con-out{
+  width: 90%;
+  margin: auto;
+}
+.filtrate-car-con-out-data{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 30rpx 0;
+}
+.no-info{
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:space-between;
+  width:50%;
+  margin: auto;
+  align-items:center;
+  color: #858585;
+}
+.no-info image{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 20rpx 0 0;
+}
+.filtrate-car-con-out-data-left{
+  width:80%;
+}
+.filtrate-car-con-out-data-left-img{
+  width: 90%;
+  height: 100%;
+}
+.filtrate-car-con-out-data-left-img image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.filtrate-car-con-out-data-right-maxTitle{
+  font-size: 35rpx;
+}
+.filtrate-car-con-out-data-right-maxTitle,.filtrate-car-con-out-data-right-minTitle{
+  display: block;
+}
+.filtrate-car-con-out-data-right-minTitle{
+  font-size: 30rpx;
+  color: #858585;
+  margin: 10rpx 0;
+}
+.filtrate-car-con-out-data-right{
+  width: 100%;
+}
+.filtrate-car-con-out-data-right-allprice{
+  font-size: 35rpx;
+  color: #ffa028;
+}
+.filtrate-car-con-out-data-right-firstprice{
+  color: #ffa028;
+  margin-left: 10rpx;
+}

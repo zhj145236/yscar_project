@@ -1,0 +1,68 @@
+/* pages/nextCon//pages/collectCenter/collectCenter.wxss */
+page{
+  font-size: 30rpx;
+}
+
+/* 产品列表 start */
+.filtrate-car-con-out{
+  width: 90%;
+  margin: auto;
+}
+.no-info{
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:space-between;
+  width:50%;
+  margin: auto;
+  align-items:center;
+  color: #858585;
+}
+.no-info image{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 20rpx 0 0;
+}
+.filtrate-car-con-out-data{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 30rpx 0;
+}
+.filtrate-car-con-out-data-left{
+  width:80%;
+}
+.filtrate-car-con-out-data-left-img{
+  width: 90%;
+  height: 100%;
+}
+.filtrate-car-con-out-data-left-img image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.filtrate-car-con-out-data-right-maxTitle{
+  font-size: 35rpx;
+}
+.filtrate-car-con-out-data-right-maxTitle,.filtrate-car-con-out-data-right-minTitle{
+  display: block;
+}
+.filtrate-car-con-out-data-right-minTitle{
+  font-size: 30rpx;
+  color: #858585;
+  margin: 10rpx 0;
+}
+.filtrate-car-con-out-data-right{
+  width: 100%;
+}
+.filtrate-car-con-out-data-right-allprice{
+  font-size: 35rpx;
+  color: #ffa028;
+}
+.filtrate-car-con-out-data-right-firstprice{
+  color: #ffa028;
+  margin-left: 10rpx;
+}
+/* 产品列表 end */

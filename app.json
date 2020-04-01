@@ -1,0 +1,73 @@
+{
+  "debug": false,
+  "pages": [
+    "pages/index/index",
+    "pages/shop/shop",
+    "pages/classification/classification",
+    "pages/me/me",
+    "pages/message/auth/index",
+
+    "pages/index/goodsDetails/goodsDetails"
+  ],
+
+  "permission":{
+    "scope.userLocation":{
+      "desc":"使用地图功能前请确保您手机的定位功能正常开启"
+    }
+  },
+
+  "subPackages": [
+    {
+      "root": "pages/nextCon/",
+      "pages": [
+        "pages/notice/notice",
+        "pages/noticeCenter/noticeCenter",
+        "pages/collectCenter/collectCenter",
+        "pages/browseCenter/browseCenter"
+      ]
+    }
+  ],
+
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "广东粤晟二手车交易中心",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  
+
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#ffa028",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "买车",
+        "iconPath": "/image/home.png",
+        "selectedIconPath": "/image/home.png"
+      },
+      {
+        "pagePath": "pages/classification/classification",
+        "text": "卖车",
+        "iconPath": "/image/maiche.png",
+        "selectedIconPath": "/image/maiche.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "车商",
+        "iconPath": "/image/cheshang.png",
+        "selectedIconPath": "/image/cheshang.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "/image/me.png",
+        "selectedIconPath": "/image/me.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

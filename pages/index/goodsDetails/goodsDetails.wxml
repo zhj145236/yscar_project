@@ -1,0 +1,153 @@
+<!--pages/index/goodsDetails/goodsDetails.wxml-->
+<scroll-view style='height:{{winHeight}}px;' scroll-y="true">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" style='width:100%;height:480rpx;'>
+    <block wx:for="{{bannerImg[0]}}" wx:key="">
+      <swiper-item>
+        <image mode="aspectFill" src="https://api.yuesheng.mierhuo.com/static/{{item.media_url}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="goodsDetails">
+    <block wx:for="{{carDetail}}" wx:key="">
+      <view class="goodsDetails-view">
+        <text class="goodsDetails-maxTitle">{{item.data.name}}</text>
+        <text class="goodsDetails-minTitle">{{item.data.user_purchase_date}}/{{(item.data.mileage)/10000}}万公里</text>
+
+        <view wx:if="{{showPrice}}" class="goodsDetails-price">
+          <text class="goodsDetails-price-all">车辆底价：{{(item.data.purchase_price)/1000000}}万</text>
+        </view>
+        
+        <view class="goodsDetails-price">
+          <text class="goodsDetails-price-all">总价：{{(item.data.sale_price)/1000000}}万</text>
+          <text class="goodsDetails-price-first">首付：{{(item.data.down_payment_price)/1000000}}万</text>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 信息参数 -->
+  <view class="car-info">
+    <!-- 标题 -->
+    <view class="car-info-out">
+      <view class="car-info-view">
+        <block wx:for="{{carTitle}}" wx:key="">
+          <view bindtap="clickTitle" data-index="{{index}}"  class='car-info-title {{num == index ? "active" : ""}}'>
+            <text>{{item.title}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!-- 信息 -->
+    <view>
+      <block wx:for="{{carInfoTitle[detailsNum]}}" wx:key="">
+        <!-- 车辆信息架构以后需要重构 -->
+        <view style="height:100%;" wx:if="{{item.carId==0}}">
+          <block wx:for="{{carDetail}}" wx:key="">
+            <view class="basic-info-out">
+              <view style="border-bottom:4px solid #e2e2e2;">
+                <view class="basic-info-view">
+                  <view class="basic-info-view-inside">                      
+                    <text class="basic-info-view-inside-maxTitle">上牌时间</text>
+                    <text class="basic-info-view-inside-minTitle">{{item.data.user_purchase_date}}</text>
+                  </view>
+                  <view class="basic-info-view-inside">                      
+                    <text class="basic-info-view-inside-maxTitle">表显里程</text>
+                    <text class="basic-info-view-inside-minTitle">{{(item.data.mileage)/10000}}万公里</text>
+                  </view>
+                  <view class="basic-info-view-inside">                      
+                    <text class="basic-info-view-inside-maxTitle">车辆归属地</text>
+                    <text class="basic-info-view-inside-minTitle">{{item.data.location}}</text>
+                  </view>
+                  <view class="basic-info-view-inside">                      
+                    <text class="basic-info-view-inside-maxTitle">车身颜色</text>
+                    <text class="basic-info-view-inside-minTitle">{{item.data.color}}</text>
+                  </view>
+                  <view class="basic-info-view-inside">                      
+                    <text class="basic-info-view-inside-maxTitle">排放标准</text>
+                    <text class="basic-info-view-inside-minTitle">{{item.data.emission_standards}}</text>
+                  </view>
+                  <view class="basic-info-view-inside">                      
+                    <text class="basic-info-view-inside-maxTitle">变速箱</text>
+                    <text class="basic-info-view-inside-minTitle">{{item.data.gearbox_type}}</text>
+                  </view>
+                  <view class="basic-info-view-inside">                      
+                    <text class="basic-info-view-inside-maxTitle">车辆所在地</text>
+                    <text class="basic-info-view-inside-minTitle">{{item.data.location}}</text>
+                  </view>
+                  <view class="basic-info-view-inside">                      
+                    <text class="basic-info-view-inside-maxTitle">排量</text>
+                    <text class="basic-info-view-inside-minTitle">{{item.data.emission_volume}}L</text>
+                  </view>
+                </view>
+              </view>
+              <!-- 车辆描述 -->
+              <view class="car-describe">
+                <block wx:for="{{carDescribe}}" wx:key="">  
+                  <view class="car-describe-out">
+                    <view class="car-describe-out-main">
+                      <text>{{item.name}}</text>
+                    </view>
+                    <view>{{item.content}}</view>
+                    <view wx:if="{{item.type==0}}" class="add-style"><view class="chage-add-style">{{item.text}}</view></view>
+                    <!-- <view wx:if="{{item.type==1}}" class="add-style-img"><image mode="aspectFill" src="../../{{item.imgUrl}}" /></view> -->
+                    <view wx:if="{{item.type==1}}" class="add-style"><view class="chage-add-style">暂无检测报告</view></view>
+                  </view>           
+                </block>
+              </view>
+            </view>
+          </block>
+        </view>
+        <!-- 详细配置架构 -->
+        <view class="detailed" style="height:100%;" wx:if="{{item.carId==1}}">
+          <view class="add-style"><view class="chage-add-style">详细配置完善中</view></view>
+          <!-- <view class="detailed-con">
+            <block wx:for="{{item.content}}">
+              <text class="detailed-con-tex">{{item.name}}</text>
+              <block wx:for="{{item.info}}" wx:key="">
+                <view class="detailed-con-tex-view">
+                  <block wx:for="{{item.title}}" wx:key="">
+                    <text class="detailed-con-tit {{item.status?'addClass':''}}">{{item.name}}</text>
+                  </block>
+                </view>
+                <view class="set-allocation">
+                  <block wx:for="{{item.content}}" wx:key="">
+                    <view class="detailed-con-tex-con">
+                      <text class="detailed-con-name">{{item.name}}</text>
+                      <text class="detailed-con-val">{{item.value}}</text>
+                    </view>
+                  </block>
+                </view>
+              </block>
+            </block>
+          </view> -->
+        </view>
+        <!-- 车辆视频架构 -->
+        <view class="car-vido" style="height:100%;" wx:if="{{item.carId==2}}">
+          <block wx:for="{{item.content}}" wx:key="">
+            <text class="car-vido-name">{{item.name}}</text>
+            <view class="car-ysvideo" wx:if="{{item.imgType==0}}">
+              <video id="ysvideo" controls='true' src="{{item.imgUrl}}" binderror="videoErrorCallback" direction="90" poster="{{item.posterImg}}" show-fullscreen-btn></video>
+            </view>
+            <view class="car-ysvideo-img" wx:if="{{item.imgType==1}}">
+              <image src="../../{{item.imgUrl}}" />
+            </view>              
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+  <button plain='true' class="zf-btn" open-type="share"><image src="../../../{{zfImg}}" /></button>
+</scroll-view>
+<view class="zw-view"></view>
+<!-- 底部菜单 -->
+<view class="footer-view">
+  <view class="footer-view-icon">
+    <view class="footer-view-icon-view">
+      <block wx:for="{{footerData}}" wx:key="">
+        <view bindtap="zfClick" data-index="{{index}}" class="footer-view-icon-con"><image src="../../../image/{{item.imgUrl}}" /><text>{{item.name}}</text></view>
+      </block>
+    </view>
+    <!-- <text class="footer-view-icon-view-text">预交订金￥500</text> -->
+  </view>
+</view>

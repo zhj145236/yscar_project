@@ -1,0 +1,125 @@
+/* pages/nextCon//pages/collectCenter/collectCenter.wxss */
+page{
+  font-size: 30rpx;
+}
+
+/* 产品列表 start */
+.filtrate-car-con-out{
+  width: 90%;
+  margin: auto;
+}
+.no-info{
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:space-between;
+  width:50%;
+  margin: auto;
+  align-items:center;
+  color: #858585;
+}
+.no-info image{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 20rpx 0 0;
+}
+.filtrate-car-con-out-data{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+  /* border-bottom: 1px solid #e2e2e2; */
+  padding: 30rpx 0;
+}
+.filtrate-car-con-out-data-left{
+  width:80%;
+}
+.filtrate-car-con-out-data-left-img{
+  width: 90%;
+  height: 100%;
+}
+.filtrate-car-con-out-data-left-img image{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.filtrate-car-con-out-data-right-maxTitle{
+  font-size: 35rpx;
+}
+.filtrate-car-con-out-data-right-maxTitle,.filtrate-car-con-out-data-right-minTitle{
+  display: block;
+}
+.filtrate-car-con-out-data-right-minTitle{
+  font-size: 30rpx;
+  color: #858585;
+  margin: 10rpx 0;
+}
+.filtrate-car-con-out-data-right{
+  width: 100%;
+}
+.filtrate-car-con-out-data-right-allprice{
+  font-size: 35rpx;
+  color: #ffa028;
+}
+.filtrate-car-con-out-data-right-firstprice{
+  color: #ffa028;
+  margin-left: 10rpx;
+}
+/* 产品列表 end */
+
+/* 新增向右滑动展示删除按钮 */
+.contents{
+    width:100%;
+    min-height: 100%;
+}
+  .touch-item {
+    /* height: 130rpx; */
+    width: 100%;
+    background: #fff;
+    border-bottom: 1rpx solid #e2e2e2;
+    display: flex;
+    /* //均匀排布每个元素 */
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 20rpx 0;
+  }
+  .content {
+   width: 100%;
+   padding: 0 30rpx;
+   /* margin-right:0; */
+   -webkit-transition: all 0.4s;
+   transition: all 0.4s;
+   -webkit-transform: translateX(150rpx);
+   transform: translateX(150rpx);
+   margin-left: -150rpx;
+   box-sizing: border-box;
+  }
+  .del {
+    width: 150rpx;  
+    font-size: 26rpx;
+    background-color: #efefef; 
+    color: #666666; 
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    -webkit-transform: translateX(90px);
+    transform: translateX(90px);
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+  .content_name{
+    font-size: 28rpx;
+    color: #333;
+    line-height: 30rpx;
+    margin: 30rpx 0 28rpx;
+}
+.content_time{
+    color: rgb(153,153,153);
+    font-size: 20rpx;
+    line-height: 20rpx;
+}
+  .touch-move-active .content,
+  .touch-move-active .del {
+   -webkit-transform: translateX(0);
+   transform: translateX(0);
+  }

@@ -1,0 +1,51 @@
+<!--pages/nextCon//pages/collectCenter/collectCenter.wxml-->
+<!-- 产品列表 -->
+  <view class="filtrate-car-con">
+    <view class="filtrate-car-con-out">
+      <view class="no-info" wx:if="{{carList.length == 0}}">
+        <image src="../../../../image/kunian.png" />
+        <text>暂无任何收藏</text>
+      </view>
+        <!-- <block wx:for="{{carList}}" wx:key=""> -->
+            <!-- <view bindtap='goodsClick' class="filtrate-car-con-out-data content" data-goodsid="{{item.id}}"> -->
+              <!-- 单条数据左边图片区 -->
+              <!-- <view class="filtrate-car-con-out-data-left">
+                <view class="filtrate-car-con-out-data-left-img">
+                  <image src="https://api.yuesheng.mierhuo.com/static/{{item.post_image}}" />
+                </view>
+              </view> -->
+              <!-- 单条数据右边内容区 -->
+              <!-- <view class="filtrate-car-con-out-data-right">
+                <text class="filtrate-car-con-out-data-right-maxTitle">{{item.name}}</text>
+                <text class="filtrate-car-con-out-data-right-minTitle">{{item.publish_date}}/{{(item.mileage)/10000}}公里</text>
+                <view class="filtrate-car-con-out-data-right-price">
+                  <text class="filtrate-car-con-out-data-right-allprice">{{(item.sale_price)/1000000}}万</text>
+                  <text class="filtrate-car-con-out-data-right-firstprice">首付{{(item.down_payment_price)/1000000}}万</text>
+                </view>
+              </view> -->
+            <!-- </view> -->
+        <!-- </block> -->
+        <!-- 测试数据 -->
+        <view class="contents">
+          <view bindtap='goodsClick' data-goodsid="{{item.id}}" class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{recordList}}" wx:key="">
+            <!-- 单条数据左边图片区 -->
+            <view class="content filtrate-car-con-out-data" data-goodsid="{{item.id}}">
+              <view class="filtrate-car-con-out-data-left">
+                <view class="filtrate-car-con-out-data-left-img">
+                  <image  src="https://api.yuesheng.mierhuo.com/static/{{item.post_image}}" />
+                </view>
+              </view>
+              <view class="filtrate-car-con-out-data-right">
+                <text class="filtrate-car-con-out-data-right-maxTitle">{{item.name}}</text>
+                <text class="filtrate-car-con-out-data-right-minTitle">{{item.publish_date}}/{{(item.mileage)/10000}}公里</text>
+                <view class="filtrate-car-con-out-data-right-price">
+                  <text class="filtrate-car-con-out-data-right-allprice">{{(item.sale_price)/1000000}}万</text>
+                  <text class="filtrate-car-con-out-data-right-firstprice">首付{{(item.down_payment_price)/1000000}}万</text>
+                </view>
+              </view>
+            </view>
+            <view class="del" data-id="{{item.id}}"  data-status="{{item.status}}" catchtap="del" data-index="{{index}}">删除收藏</view>
+          </view>
+      </view>
+    </view>
+  </view>

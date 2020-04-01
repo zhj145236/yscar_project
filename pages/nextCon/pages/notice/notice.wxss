@@ -1,0 +1,27 @@
+/* pages/nextCon//pages/notice/notice.wxss */
+page{
+  font-size: 30rpx;
+}
+.notice-center-con{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #e2e2e2;
+}
+.notice-center-txt{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+  width: 90%;
+  margin: auto;
+}
+.notice-center-txt text{
+  display: block,
+}
+.notice-center-txt-time{
+  color: #ff6600;
+}
+.notice-center-txt-title{
+  width:260rpx; 
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
